@@ -1,41 +1,18 @@
 package bas_java;
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
 	public static void main(String[] args) {
-
-		System.out.println(categorieDefilm("Star Wars"));
-		System.out.println(categorieDefilm("Blanche neige"));
-		System.out.println(categorieDefilm("Indiana Jones"));
-		System.out.println(categorieDefilm("La petite sirene"));
-		System.out.println(categorieDefilm("aaaaaaaaa"));
 		
-	}
-	
-	public static String categorieDefilm(final String film) {
-		var resultat = switch(film) {
-		case "Star Wars" -> "Science fiction";
-		case "Blanche neige" , "La petite sirene" -> "Disney";
-		case "Indiana Jones" -> {
-			String categorie = "Aventure";
-			yield categorie;
+		List<String> nomsDeslangages = Arrays.asList("Java","PHP","Javascript", "C#");
+		for(String nomDUnLangage : nomsDeslangages)  {
+			String resultat = nomDUnLangage.toUpperCase();
+			System.out.println(resultat);
 		}
-		default -> "Inconnu";
-		};
-		return resultat;
-		
-	}
-	
-//	public static void commentLaMeteo(final String meteo) {
-//		switch(meteo) {
-//		case "soleil" -> System.out.println("Beau temps");
-//		case "nuage" -> System.out.println("Couvert");
-//		case "pluie" -> System.out.println("Mauvais temps");
-//		default -> System.out.println("Je ne sais pas");
-//		} 
-//		
-//	}
-
-	
+				
+	}	
 
 }
+	
