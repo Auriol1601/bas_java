@@ -3,55 +3,39 @@ package bas_java;
 public class Main {
 
 	public static void main(String[] args) {
-		//int somme = Main.addition(2, 7);
-		//System.out.println(somme);
-		
-		Main.chiffreEgalAZero(3);
-		Main.meteo("soleil");
 
+		System.out.println(categorieDefilm("Star Wars"));
+		System.out.println(categorieDefilm("Blanche neige"));
+		System.out.println(categorieDefilm("Indiana Jones"));
+		System.out.println(categorieDefilm("La petite sirene"));
+		System.out.println(categorieDefilm("aaaaaaaaa"));
 		
 	}
 	
-	
-	//public static int addition(final int entier1, final int entier2) {
-		
-		//return entier1 + entier2;
-	//}
-	
-	
-	public static void chiffreEgalAZero(final int valeur) {
-		
-		if(valeur == 0) {
-			System.out.println("L'entier passé en parametre vaut 0");
-			
-		} else {
-			System.out.println("L entier passé en paramètre est différent de 0");
+	public static String categorieDefilm(final String film) {
+		var resultat = switch(film) {
+		case "Star Wars" -> "Science fiction";
+		case "Blanche neige" , "La petite sirene" -> "Disney";
+		case "Indiana Jones" -> {
+			String categorie = "Aventure";
+			yield categorie;
 		}
+		default -> "Inconnu";
+		};
+		return resultat;
 		
 	}
 	
-//	public static void meteo(final boolean beauTemps) {
-//		if(beauTemps) {
-//			System.out.println("Je vais à la plage");
-//		} else {
-//			System.out.println("Je vais au cinéma");
-//		}
+//	public static void commentLaMeteo(final String meteo) {
+//		switch(meteo) {
+//		case "soleil" -> System.out.println("Beau temps");
+//		case "nuage" -> System.out.println("Couvert");
+//		case "pluie" -> System.out.println("Mauvais temps");
+//		default -> System.out.println("Je ne sais pas");
+//		} 
 //		
 //	}
-	
-//    public static void meteo(final boolean beauTemps) {
-//    	if(!beauTemps) {
-//    		System.out.println("Le temps n' est pas beau");
-//    	}
-//    }
-	
-	public static void meteo(final String temps) {
-		if(temps.equals("soleil")) {
-			
-			System.out.println("Je vais à la plage");
-			
-		}
-	}
+
 	
 
 }
