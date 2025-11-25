@@ -1,19 +1,23 @@
 package bas_java;
 
-import java.util.LinkedHashSet;
+import java.util.HashMap;
 import java.util.Set;
+import java.util.Map;
 
 public class Main {
-    
+
     public static void main(String[] args) {
-        Set<String> motsCles = new LinkedHashSet<String>();
-        motsCles .add("Cabane");
-        motsCles .add("Cabane");
-        motsCles .add("Muraille");
-        
-        for(String motCle : motsCles) {
-            System.out.println(motCle);
-        }
+    	
+    	Map<Bloc, Integer> quantiteBloc = new HashMap<Bloc, Integer>();
+    	quantiteBloc.put(new Mur(1,1,1,true),4);
+    	quantiteBloc.put(new Mur(1,1,1,false),4);
+    	
+    	Set<Bloc> cles = quantiteBloc.keySet();
+    	for(Bloc cle : cles) {
+    		Integer valeur = quantiteBloc.get(cle);
+    		System.out.println(cle.getClass().getName() + " : " + valeur);
+    	} 
+    	
     }
     
 }
